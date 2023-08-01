@@ -1,0 +1,14 @@
+
+version: '3'
+services:
+  producer:
+    build: ./producer
+    ports:
+      - "8000:8000"
+
+  consumer:
+    env_file:
+      - ./consumer/.env
+    build: ./consumer
+    ports:
+      - "8001:8001"
